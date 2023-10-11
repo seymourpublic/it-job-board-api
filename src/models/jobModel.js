@@ -4,9 +4,9 @@ const jobSchema = new mongoose.Schema({
   title: String,
   company: String,
   description: String,
-  logoUrl: String, // Add a field for the company logo URL
-  closingDate: Date, // Add a field for the closing date
-  emailAddress: String, // Add a field for the email address
+  logoUrl: String, 
+  closingDate: Date, 
+  emailAddress: String, 
 });
 
 module.exports = mongoose.model('Job', jobSchema);
