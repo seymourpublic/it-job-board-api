@@ -1,5 +1,3 @@
-// src/routes/jobRoutes.js
-
 const express = require('express');
 const router = express.Router();
 const jobController = require('../controllers/jobController');
@@ -49,9 +47,20 @@ router.post('/', jobController.createJob);
  *         content:
  *           application/json:
  *             schema:
- *               type: array
- *               items:
- *                 $ref: '#/components/schemas/Job' // You can define a Job schema in your Swagger configuration
+ *              type: object
+ *              properties:
+ *                  title:
+ *                      type: string
+ *                  company:
+ *                      type: string
+ *                  description:
+ *                      type: string
+ *                  logoUrl:
+ *                      type: string
+ *                  closingDate:
+ *                      type: string
+ *                  emailAddress:
+ *                      type: string
  *       500:
  *         description: Server error
  */
@@ -65,9 +74,9 @@ router.get('/', jobController.getAllJobs);
  *     description: Retrieve a job listing by its unique ID.
  *     parameters:
  *       - in: path
- *         name: id
- *         required: true
- *         description: Job listing ID
+ *          name: id
+ *              required: true
+ *          description: Job listing ID
  *         schema:
  *           type: string
  *     responses:
@@ -76,7 +85,20 @@ router.get('/', jobController.getAllJobs);
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Job' // You can define a Job schema in your Swagger configuration
+ *              type: object
+ *              properties:
+ *                  title:
+ *                      type: string
+ *                  company:
+ *                      type: string
+ *                  description:
+ *                      type: string
+ *                  logoUrl:
+ *                      type: string
+ *                  closingDate:
+ *                      type: string
+ *                  emailAddress:
+ *                      type: string
  *       404:
  *         description: Job not found
  *       500:
@@ -122,7 +144,20 @@ router.get('/:id', jobController.getJobById);
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Job' // You can define a Job schema in your Swagger configuration
+ *              type: object
+ *              properties:
+ *                  title:
+ *                      type: string
+ *                  company:
+ *                      type: string
+ *                  description:
+ *                      type: string
+ *                  logoUrl:
+ *                      type: string
+ *                  closingDate:
+ *                      type: string
+ *                  emailAddress:
+ *                      type: string
  *       404:
  *         description: Job not found
  *       500:

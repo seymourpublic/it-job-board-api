@@ -1,5 +1,3 @@
-// src/controllers/jobController.js
-
 const Job = require('../models/jobModel');
 
 // Create a new job listing
